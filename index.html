@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskMaster RPG | Level Up Your Life</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,9 +22,9 @@
             <div class="progress-container">
                 <div class="bar-label">Experience Points (XP)</div>
                 <div class="xp-bar-bg">
-                    <div class="xp-bar-fill" id="xpFill" style="width: 20%;"></div>
+                    <div class="xp-bar-fill" id="xpFill" style="width: 0%;"></div>
                 </div>
-                <div class="xp-text"><span id="currentXP">20</span> / <span id="nextLevelXP">100</span> XP</div>
+                <div class="xp-text"><span id="currentXP">0</span> / <span id="nextLevelXP">100</span> XP</div>
             </div>
 
             <div class="health-container">
@@ -67,10 +68,8 @@
                     </div>
                 </div>
 
-                <div class="task-filters">
+                <div class="task-filters" style="margin-top: 20px;">
                     <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="pending">Active</button>
-                    <button class="filter-btn" data-filter="completed">Completed</button>
                 </div>
 
                 <ul class="task-list" id="taskList">
@@ -86,6 +85,8 @@
             <button onclick="closeModal()">Keep Grinding</button>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
     <script src="js/storage.js"></script>
     <script src="js/gameLogic.js"></script>
