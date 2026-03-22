@@ -1,0 +1,31 @@
+/* حركة دخول المهام الجديدة */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.task-item {
+    animation: slideIn 0.4s ease forwards;
+}
+
+/* حركة الـ Level Up */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* حركة نبض للـ XP لما يزيد */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.xp-bar-fill.pulse {
+    animation: pulse 0.3s ease-in-out;
+}
