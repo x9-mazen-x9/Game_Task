@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster RPG | Level Up Your Life</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="stats-header">
+            <div class="user-info">
+                <div class="avatar-circle">
+                    <img src="assets/images/avatar-default.png" alt="Hero" id="userAvatar">
+                </div>
+                <div class="level-badge">LVL <span id="currentLevel">1</span></div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="bar-label">Experience Points (XP)</div>
+                <div class="xp-bar-bg">
+                    <div class="xp-bar-fill" id="xpFill" style="width: 20%;"></div>
+                </div>
+                <div class="xp-text"><span id="currentXP">20</span> / <span id="nextLevelXP">100</span> XP</div>
+            </div>
+
+            <div class="health-container">
+                <div class="bar-label">Energy / Health</div>
+                <div class="hp-bar-bg">
+                    <div class="hp-bar-fill" id="hpFill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <aside class="sidebar">
+                <section class="character-stats">
+                    <h3>Character Stats</h3>
+                    <ul>
+                        <li>🔥 Productivity: <span id="statProd">5</span></li>
+                        <li>⚡ Consistency: <span id="statConst">2</span></li>
+                        <li>🏆 Badges: <span id="badgeCount">0</span></li>
+                    </ul>
+                </section>
+                
+                <section class="achievements">
+                    <h3>Recent Badges</h3>
+                    <div class="badge-grid" id="badgeGrid">
+                        <div class="badge locked">?</div>
+                    </div>
+                </section>
+            </aside>
+
+            <section class="task-section">
+                <div class="task-input-card">
+                    <h2>What's your next quest?</h2>
+                    <div class="input-group">
+                        <input type="text" id="taskInput" placeholder="Enter task name...">
+                        <select id="taskPriority">
+                            <option value="low">Easy (+10 XP)</option>
+                            <option value="medium" selected>Medium (+25 XP)</option>
+                            <option value="high">Hard (+50 XP)</option>
+                        </select>
+                        <button id="addTaskBtn">Add Quest</button>
+                    </div>
+                </div>
+
+                <div class="task-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="pending">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <ul class="task-list" id="taskList">
+                    </ul>
+            </section>
+        </main>
+    </div>
+
+    <div id="levelUpModal" class="modal hidden">
+        <div class="modal-content">
+            <h1 class="animate-bounce">LEVEL UP! 🎊</h1>
+            <p>You have reached Level <span id="newLevel">2</span></p>
+            <button onclick="closeModal()">Keep Grinding</button>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/gameLogic.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
