@@ -44,6 +44,7 @@ function toggleTask(id) {
         task.completed = true;
         const result = GameLogic.updateXP(gameState.xp, task.xpValue);
         gameState.xp = result.newXP;
+        
         if (result.leveledUp) {
             gameState.level++;
             showLevelUpModal();
@@ -67,6 +68,16 @@ function showLevelUpModal() {
     const modal = document.getElementById('levelUpModal');
     document.getElementById('newLevel').innerText = gameState.level;
     modal.classList.remove('hidden');
+    
+    // تشغيل تأثير الاحتفال (Confetti)
+    if (typeof confetti === 'function') {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#6c5ce7', '#a29bfe', '#fab1a0']
+        });
+    }
 }
 
 window.closeModal = () => {
